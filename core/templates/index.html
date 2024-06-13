@@ -1,0 +1,40 @@
+<!--Todas las paginas extenderan de base.html-->
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+index
+{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block contenido_header %}
+<div>
+    <h1>Veranum</h1>
+    <h3>Hotel Y Restaurante</h3>
+</div>
+{% endblock %}
+
+{% block contenido %}
+<main class="container-fluid">
+    <section class="row">
+        <figure class="col-md">
+            <img src="{% static 'imgs/index/hotel-1.webp' %}" class="img-fluid" alt="imagenes">
+        </figure>
+        <article class="col-md">
+            <h1>Experiencia de lujo en el corazón de la ciudad</h1>
+            <h4>Disfruta de una estadía excepcional en nuestras lujosas habitaciones, con acceso a una piscina, spa y
+                restaurante gourmet.</h4>
+            <button>Reservar Ahora</button>
+        </article>
+    </section>
+    <section class="row">
+        <article class="col-12">
+            <h1>Características destacadas</h1>
+            <h5>Nuestro hotel ofrece una experiencia única con una piscina climatizada, un lujoso spa y un restaurante gourmet.</h5>
+        </article>
+    </section>
+</main>
+{% endblock contenido %}

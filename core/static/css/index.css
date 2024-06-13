@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+header {
+    background-image: url('https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/Luxury_Hospitality_Pillars.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+header > div{
+    padding: 2vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+div > h3,
+div > h1{
+    color: yellow;
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Playfair Display", serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #09383D;
+
+}
+
+/* Primer seccion */
+
+main,main > section,article,figure{
+    padding: 2vh;
+}
+
+article,figure{
+    padding: 2vh;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+}
+
+figure > img{
+    border-radius: 2vh;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+article > h1,
+article > h4{
+    color: rgb(255, 255, 88);
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+button{
+    border-radius: 2vh;
+    padding: 1vh;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    border: 1px yellow solid;
+    background-color: #09383D;
+}
+
+button:hover{
+    background-color: black;
+}
+
+/* Segundo Seccion */
+main > section > article:nth-child(1) > h5{
+    color: rgb(255, 255, 88);
+    font-family: "Roboto", sans-serif;
+    text-align: center;   
+}

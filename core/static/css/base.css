@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background-color: #09383D;
+}
+
+.bg-body-tertiary {
+    background-color: #09383D  !important;
+    opacity: 80%;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-brand {
+    font-family: "Playfair Display", serif;
+    color: yellow;
+}
+
+.navbar-brand:hover {
+    color: yellow;
+}
+
+.navbar-nav .nav-link.active:hover {
+    text-decoration: underline yellow 2px;
+}
+
+.navbar-toggler {
+    outline: none;
+    border: yellow 1px solid;
+    background-color: yellow;
+}
+
+.navbar-toggler-icon {
+    color: yellow !important;
+}
+
+
+footer,
+footer>section {
+    padding: 2vh;
+    background-color: black;
+}
+
+footer>section>div>h6>a,
+footer>section>div>h6 {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-decoration: none;
+    text-align: center ;
+}
+
+footer>section>div>h6>a:hover{
+    text-decoration: underline white 2px;
+}
+
+footer>section>div:nth-child(2),
+footer>section>div:nth-child(3),
+footer>section>div:nth-child(4){
+    display: flex;
+    justify-content: end;
+}
