@@ -28,7 +28,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><i class="bi bi-buildings"></i>Veranum</a>
+                <a class="navbar-brand" href="{% url 'home'%}"><i class="bi bi-buildings"></i>Veranum</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -50,16 +50,17 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Reservas</a>
                         </li>
-                        {% if user.is_authenticated %}
+                        {% if user.is_authenticated%}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="">{{user.username}}</a>
                         </li>
-                        <form class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Cerrar Sesión</a>
+                        <form class="nav-item" action="{% url 'logout' %}" method="post" >
+                            {% csrf_token %}
+                            <button type="submit" id="Cerrar" class="nav-link active">Cerrar sesión</button>
                         </form>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Inicio Sesión</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Inicio de Sesión</a>
                         </li>
                         {% endif %}
                     </ul>

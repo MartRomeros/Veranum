@@ -6,13 +6,22 @@ label,li,button,input,
 form > div > h6 >a,
 form > div > h6 {
     font-family: "Roboto", sans-serif;
-    color: black;
+    color: rgb(0, 0, 0);
     text-align: center;
     text-decoration: none;
 }
 
+#registro{
+    text-align: center;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
 label{
     font-size: 18px;
+    flex-direction: column;
+    text-align: center;
 }
 
 li{
@@ -21,6 +30,11 @@ li{
 
 section, form{
     padding: 2vh;
+}
+
+main{
+    padding: 2vh;
+    background-image: url('https://media.admagazine.com/photos/618a6ae690c4ec9a52ca12cd/master/w_1600%2Cc_limit/61423.jpg');   
 }
 
 main > section{
@@ -61,23 +75,19 @@ button{
 }
 
 form{
+    background-color: #09383D;
     flex-shrink: 0;
     width: 650px;
     flex-wrap: nowrap;
     margin-top: var(--bs-gutter-y);
-    background-color: rgb(255, 255, 255);
     border-radius: 15px;
-    /*background-image: url('https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/Luxury_Hospitality_Pillars.jpeg');
-    */background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 label{
-    color: #000000 ;
+    color: #ffffff ;
     border-radius: 40px;
-    width: 20%;
-    margin-left: 200px;
+    /*width: 20%;*/
+    /*margin-left: 200px;*/
 }
 
 form > h1{

@@ -5,6 +5,11 @@ body {
     background-color: #09383D;
 }
 
+#cerrar{
+    color: yellow;
+    font-family: "Playfair Display", serif;
+}
+
 .bg-body-tertiary {
     background-color: #09383D  !important;
     opacity: 80%;
@@ -14,6 +19,7 @@ body {
 .navbar-brand {
     font-family: "Playfair Display", serif;
     color: yellow;
+    
 }
 
 .navbar-brand:hover {

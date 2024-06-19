@@ -1,9 +1,7 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-#from .forms import LoginForm
-from django.contrib.auth.views import logout_then_login 
+from django.shortcuts import render,redirect
+from django.contrib.auth.views import logout_then_login
 from .forms import *
-
+from .models import *
 # Create your views here.
 def home(request):
     return render(request,'index.html')
@@ -23,7 +21,7 @@ def registro(request):
         
     return render(request,'registro.html',{"form":form})
 
-def login_view(request):
+#def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():

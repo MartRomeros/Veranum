@@ -13,13 +13,13 @@ Inicio Sesión
 <main class="container-fluid">
     <section class="row">
         <form method="post" class="col-lg-5">
-            <h1>Inicio de Sesión</h1>
-            <h6>Ingresa tus credenciales para acceder</h6>
+            <h1 id= "registro">Inicio de Sesión</h1>
+            <h6 id= "registro">Ingresa tus credenciales para acceder</h6>
             {% csrf_token %}
             {{ form }}
             <div>
-                <h6>No tienes una cuenta?</h6>
-                <h6 id= "registro"><a href="{% url 'registro' %}">Registrarme</a></h6>
+                <h6 id= "registro">No tienes una cuenta?</h6>
+                <h6 id= "registro"><a id= "registro" href="{% url 'registro' %}">Registrarme</a></h6>
             </div>
             <button type="submit">Iniciar Sesión</button>
         </form>

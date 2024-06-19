@@ -14,6 +14,6 @@ class Registro(UserCreationForm):
         fields = ("username","first_name","last_name","email","password1","password2")
 
 
-class LoginForm(forms.Form):
-    email = forms.EmailField(label='Email', max_length=100)
-    password = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+#class LoginForm(forms.Form):
+    #email = forms.EmailField(label='Email', max_length=100)
+    #password = forms.CharField(label='Contraseña', widget=forms.PasswordInput)

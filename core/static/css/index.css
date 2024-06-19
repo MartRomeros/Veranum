@@ -68,9 +68,9 @@ button{
     background-color: #09383D;
 }
 
-button:hover{
+/*button:hover{
     background-color: black;
-}
+}*/
 
 /* Segundo Seccion */
 main > section > article:nth-child(1) > h5{
