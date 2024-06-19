@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+Registro
+{% endblock %}
+
+{% block estilos%}
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<main class="container-fluid">
+    <section class="form">
+        <form method="post" class="col-lg-5">
+            {% csrf_token %}
+            <h1>Registro de Sesión</h1>
+            <h6>Registra tus credenciales para acceder</h6>
+            {{form}}
+            <button type="submit">Registrar</button>
+        </form>
+    </section>
+</main>
+{% endblock %}
