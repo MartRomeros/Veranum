@@ -1,78 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-div,li,
-form > div > h6,
-form > h6,
-h1,
-label,
-input,
-button,
-form > div > h6 > a{
+
+h2,h6,button,label,
+form > div,
+input{
     font-family: "Roboto", sans-serif;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
-form > h1,
-form > h6{
+h2,h6{
     text-align: center;
 }
 
-main > section,
-main,
-form{
+main{
     padding: 2vh;
+    background-image: url('https://news.airbnb.com/wp-content/uploads/sites/4/2020/05/HotelTonight_SwankyHotelLobby-1.jpg');
+    
 }
 
-main > section{
+section{
+    padding: 2vh;
     display: flex;
     justify-content: center;
 }
 
-li{
-    text-align: start;
-}
-
 form{
+    background-color: #09383D;
+    padding: 2vh;
     display: flex;
     flex-direction: column;
     gap: 2vh;
-    background-color: #ffffff;
-    border-radius: 50px;
-    background-image: url('https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/Luxury_Hospitality_Pillars.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 2vh;
+    opacity: 95%;
 }
 
 form > div{
+    padding: 2vh;
     display: flex;
     flex-direction: column;
 }
 
 input{
-    border: 1px lightgrey solid;
     outline: none;
     padding: 1vh;
     border-radius: 2vh;
+    border: none;
+    color: black;
 }
 
 button{
-    border: 1px lightgrey solid;
-    outline: none;
     padding: 1vh;
+    background-color: black;
+    border: none ;
+    outline: none;
     border-radius: 2vh;
-    color: white;
-    background-color:  #2B3035;
+    
 }
 
-.errorlist > li{
+form > button:hover{
+    border: 1px white solid;
+}
+
+.go-to-login{
+    color: white;
+    text-decoration: none;
+}
+
+.errorlist > *{
     color: red;
 }
 
-#login > a:hover{
-    text-decoration: underline 2px black solid;
-}
 
-form > li{
-    font-size: 13px;
-}
+
+

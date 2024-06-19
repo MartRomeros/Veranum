@@ -6,18 +6,18 @@ Registro
 {% endblock %}
 
 {% block estilos%}
-    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+<link rel="stylesheet" href="{% static 'css/registro.css' %}">
 {% endblock %}
 
 {% block contenido %}
 <main class="container-fluid">
-    <section class="form">
-        <form method="post" class="col-lg-5">
+    <section class="row">
+        <form method="post" class="col-md-6">
+            <h2>Registro de usuarios</h2>
+            <h6>Completa todos los campos para crearte una cuenta</h6>
             {% csrf_token %}
-            <h1>Registro de Sesión</h1>
-            <h6>Registra tus credenciales para acceder</h6>
             {{form}}
-            <button type="submit">Registrar</button>
+            <button type="submit">Registrarme</button>
         </form>
     </section>
 </main>
