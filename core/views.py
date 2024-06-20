@@ -38,3 +38,9 @@ def registro(request):
     
     return render(request, 'login.html', {'form': form})
 
+def privacidad(request):
+     return render(request,'privacidad.html')
+ 
+def terminos(request):
+    return render(request, 'terminos.html')
+
