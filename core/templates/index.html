@@ -19,6 +19,7 @@ index
 
 {% block contenido %}
 <main class="container-fluid">
+
     <section class="row">
         <figure class="col-md">
             <img src="{% static 'imgs/index/hotel-1.webp' %}" class="img-fluid" alt="imagenes">
@@ -30,11 +31,55 @@ index
             <button>Reservar Ahora</button>
         </article>
     </section>
+
     <section class="row">
+
         <article class="col-12">
             <h1>Características destacadas</h1>
-            <h5>Nuestro hotel ofrece una experiencia única con una piscina climatizada, un lujoso spa y un restaurante gourmet.</h5>
+            <h5>Nuestro hotel ofrece una experiencia única con una piscina climatizada, un lujoso spa y un restaurante
+                gourmet.</h5>
         </article>
+
+        <article class="col-sm-4">
+            <h1 class="material-symbols-outlined">pool</h1>
+            <h6>Disfruta de un relajante momento en nuestra piscina climatizada.</h6>
+        </article>
+
+        <article class="col-sm-4">
+            <h1 class="material-symbols-outlined">spa</h1>
+            <h6>Relájate y rejuvenece en nuestro exclusivo spa.</h6>
+        </article>
+
+        <article class="col-sm-4">
+            <h1 class="material-symbols-outlined">restaurant_menu</h1>
+            <h6>Disfruta de una exquisita experiencia gastronómica en nuestro restaurante.</h6>
+        </article>
+
     </section>
+
+    <section class="row">
+
+        <form action="" class="col-sm-9">
+            <h1>Contacta con nosotros</h1>
+            <h5>Llena el siguiente formulario y uno de nuestros representantes se pondrá en contacto contigo.</h5>
+            <fieldset>
+                <label for="nob">Nombre</label>
+                <input type="text" placeholder="Ingresa tu nombre">
+            </fieldset>
+            <fieldset>
+                <label for="mail">Correo Electronico</label>
+                <input type="email" placeholder="Ingresa tu nombre">
+            </fieldset>
+            <fieldset>
+                <label for="desc">Descripcion</label>
+                <textarea id="desc" placeholder="Mensaje"></textarea>
+            </fieldset>
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </section>
+
+
 </main>
 {% endblock contenido %}
