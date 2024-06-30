@@ -13,9 +13,26 @@ index
 {% block contenido_header %}
 <div>
     <h1>Veranum</h1>
+    <div id="carouselExample" class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'imgs/carrusel/carrusel.png'%}" alt="pan" >
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'imgs/carrusel/carrusel2.png'%}" alt="cerveza">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'imgs/carrusel/carrusel3.png'%}" alt="promo">
+            </div>
+        </div>
+    </div>
     <h3>Hotel Y Restaurante</h3>
 </div>
 {% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/funciones.js' %}"></script>
+{% endblock%}
 
 {% block contenido %}
 <main class="container-fluid">
