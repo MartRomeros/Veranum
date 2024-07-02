@@ -1,0 +1,56 @@
+main {
+    background: linear-gradient(#0c4e55, black);
+}
+
+section {
+    padding: 2vh;
+}
+
+main>h1 {
+    color: yellow;
+    text-align: center;
+}
+
+.room-card {
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.modal-body {
+    font-size: 0.9rem;
+}
+
+#reservar{
+    border-radius: 2vh;
+    padding: 1vh;
+    background-color: #0c4e55;
+    color: white;
+    text-decoration: none;
+}
+
+.info-reserva{
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-reserva > button{
+    border-radius: 2vh;
+    background-color: #0c4e55;
+    border: none;
+    outline: none;
+    color: white;
+
+}

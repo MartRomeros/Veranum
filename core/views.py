@@ -28,3 +28,7 @@ def privacidad(request):
 def terminos(request):
     return render(request, 'terminos.html')
 
+def habitaciones(request):
+    habitaciones = Habitacione.objects.all()
+    return render(request,'habitaciones.html',{"habitaciones":habitaciones})
+
