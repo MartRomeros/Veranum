@@ -44,7 +44,7 @@ index
             <h1>Experiencia de lujo en el corazón de la ciudad</h1>
             <h4>Disfruta de una estadía excepcional en nuestras lujosas habitaciones, con acceso a una piscina, spa y
                 restaurante gourmet.</h4>
-            <button>Reservar Ahora</button>
+            <a href="{% url 'habitaciones' %}" class="reservar">Reservar!</a>
         </article>
     </section>
 
@@ -76,6 +76,7 @@ index
     <section class="row">
 
         <form class="col-sm-9">
+            {% csrf_token %}
             <h1>Contacta con nosotros</h1>
             <h5>Llena el siguiente formulario y uno de nuestros representantes se pondrá en contacto contigo.</h5>
             <fieldset>

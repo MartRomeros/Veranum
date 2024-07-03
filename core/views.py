@@ -56,7 +56,7 @@ def agregar_reserva(request,codigo):
     return redirect(to='reservas')
 
 def borrar_reserva(request):
-    request.session.flush()    
+    request.session["room"] = []
     return redirect(to='habitaciones')
 
 def confirmar_reserva(request):
@@ -79,7 +79,8 @@ def confirmar_reserva(request):
     reserva.fecha_termino = request.POST.get("fec-ter")
     
     reserva.save()
-    request.session.flush()
+    
+    request.session["room"] = []
     
     return redirect(to='home')
     

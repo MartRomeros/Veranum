@@ -68,3 +68,7 @@ class Reserva(models.Model):
     fecha_inicio = models.DateField()
     fecha_termino = models.DateField()
     
+    def __str__(self):
+        return "reserva numero: " + str(self.cod_reserva) + "(" + self.propietario + ")"
+    
+    
