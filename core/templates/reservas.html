@@ -41,15 +41,15 @@ Reservas
             </fieldset>
             <fieldset>
                 <label for="fono"><h5>Telefono</h5></label>
-                <input type="number" id="fono" name="fono">
+                <input type="number" id="fono" name="fono" class="campo">
             </fieldset>
             <fieldset>
                 <label for="fec-ini"><h5>Fecha De Inicio de la reserva</h5></label>
-                <input type="date" id="fec-ini" name="fec-ini">
+                <input type="date" id="fec-ini" name="fec-ini" class="campo">
             </fieldset>
             <fieldset>
                 <label for="fec-ter"><h5>Fecha De Termino de la reserva</h5></label>
-                <input type="date" id="fec-ter" name="fec-ter">
+                <input type="date" id="fec-ter" name="fec-ter" class="campo">
             </fieldset>
             <button type="submit" class="envio-reserva">Confirmar Reserva!</button>
             <a href="{% url 'borrar' %}" class="borrar-reserva">Eliminar Reserva</a>
@@ -57,3 +57,8 @@ Reservas
     </section>
 </main>
 {% endblock contenido %}
+
+{% block scripts %}
+<script src="{% static 'js/reservas.js' %}"></script>
+{% endblock scripts %}
+
