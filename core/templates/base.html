@@ -48,10 +48,10 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Ubicación</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Reservas</a>
-                        </li>
                         {% if user.is_authenticated%}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'reservas' %}">Reservas</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="">{{user.username}}</a>
                         </li>

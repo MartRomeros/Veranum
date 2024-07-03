@@ -1,5 +1,3 @@
-console.log("funcionando");
-
 var btnDetalles = document.querySelectorAll("#detalles");
 var modalBody = document.querySelector(".modal-body");
 
@@ -17,9 +15,6 @@ btnDetalles.forEach(function (btn, index) {
         <h5>Habitaciones Disponibles: ${unidades} Habitaciones</h5>
         <h5>Hoteles en donde se encuentra: ${hotel}</h5>
         `;
-
-
-
         modalBody.innerHTML = cuerpo;
     });
 });

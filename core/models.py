@@ -58,4 +58,13 @@ class Habitacione(models.Model):
     def __str__(self):
         return self.tipo_habitacion
 
-
+class Reserva(models.Model):
+    cod_reserva = models.AutoField(primary_key=True)
+    id_hotel = models.ForeignKey(Hotel,on_delete=models.CASCADE)
+    id_habitacion = models.ForeignKey(Habitacione,on_delete=models.CASCADE)
+    propietario = models.CharField(max_length=200)
+    email_propietario = models.EmailField(max_length=200)
+    fono_propietario = models.EmailField(max_length=200)
+    fecha_inicio = models.DateField()
+    fecha_termino = models.DateField()
+    
