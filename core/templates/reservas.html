@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/reservas.css' %}">
+{% endblock estilos %}
+
+{% block titulo %}
+Reservas
+{% endblock titulo %}
+
+
+{% block contenido %}
+<main class="container-fluid">
+    <h1>Confirma Tu reserva!</h1>
+    <section class="row info-reserva">
+        {% for item in room %}
+        <div class="col-md-4 room-card">
+            <div class="card h-100">
+                <img src="{{item.2}}" class="card-img-top" width="450" alt="{{item.imagen}}" />
+                <div class="card-body">
+                    <h5 class="card-title">Habitacion: {{item.1}}</h5>
+                    <h6 class="card-text">Precio: {{item.3}} CLP por noche</h6>
+                    <h6 class="card-text">Cantidad de baños: {{item.4}} Baños</h6>
+                    <h6 class="card-text">Capacidad de personas: {{item.5}} Personas</h6>
+                    <h6 class="card-text">Capacidad de personas: {{item.6}} habitacion(es)</h6>
+                    <h6 class="card-text">Hotel de procedencia: {{item.7}}</h6>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <form action="{% url 'confirmar' %}" class="col-md-4" method="post">
+        {% csrf_token %}
+            <fieldset>
+                <h5>Nombre:</h5>
+                <h6 id="name">{{user.first_name}} {{user.last_name}}</h6>
+            </fieldset>
+            <fieldset>
+                <h5>Correo electronico</h5>
+                <h6 id="mail">{{user.email}}</h6>
+            </fieldset>
+            <fieldset>
+                <label for="fono"><h5>Telefono</h5></label>
+                <input type="number" id="fono" name="fono">
+            </fieldset>
+            <fieldset>
+                <label for="fec-ini"><h5>Fecha De Inicio de la reserva</h5></label>
+                <input type="date" id="fec-ini" name="fec-ini">
+            </fieldset>
+            <fieldset>
+                <label for="fec-ter"><h5>Fecha De Termino de la reserva</h5></label>
+                <input type="date" id="fec-ter" name="fec-ter">
+            </fieldset>
+            <button type="submit" class="envio-reserva">Confirmar Reserva!</button>
+            <a href="{% url 'borrar' %}" class="borrar-reserva">Eliminar Reserva</a>
+        </form>
+    </section>
+</main>
+{% endblock contenido %}

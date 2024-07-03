@@ -26,7 +26,6 @@ index
             </div>
         </div>
     </div>
-    <h3>Hotel Y Restaurante</h3>
 </div>
 {% endblock %}
 
@@ -45,7 +44,7 @@ index
             <h1>Experiencia de lujo en el corazón de la ciudad</h1>
             <h4>Disfruta de una estadía excepcional en nuestras lujosas habitaciones, con acceso a una piscina, spa y
                 restaurante gourmet.</h4>
-            <button>Reservar Ahora</button>
+            <a href="{% url 'habitaciones' %}" class="reservar">Reservar!</a>
         </article>
     </section>
 
@@ -76,16 +75,17 @@ index
 
     <section class="row">
 
-        <form action="" class="col-sm-9">
+        <form class="col-sm-9">
+            {% csrf_token %}
             <h1>Contacta con nosotros</h1>
             <h5>Llena el siguiente formulario y uno de nuestros representantes se pondrá en contacto contigo.</h5>
             <fieldset>
                 <label for="nob">Nombre</label>
-                <input type="text" placeholder="Ingresa tu nombre">
+                <input type="text" placeholder="Ingresa tu nombre" id="nob">
             </fieldset>
             <fieldset>
                 <label for="mail">Correo Electronico</label>
-                <input type="email" placeholder="Ingresa tu nombre">
+                <input type="email" placeholder="Ingresa tu nombre" id="mail">
             </fieldset>
             <fieldset>
                 <label for="desc">Descripcion</label>

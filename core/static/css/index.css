@@ -135,6 +135,15 @@ main > section > article:nth-child(1) > h5{
     border: 1px red solid;
 }
 
+.reservar{
+    padding: 1vh;
+    border: 1px yellow solid;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2vh;
+    color: white;
+}
+
 /*Tercer seccion*/
 
 main > section:nth-child(3){

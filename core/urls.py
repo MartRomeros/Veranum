@@ -9,4 +9,9 @@ urlpatterns = [
     path('registro',registro,name='registro'),
     path('privacidad/',privacidad,name='privacidad'),
     path('terminos/',terminos,name='terminos'),
+    path('habitaciones',habitaciones,name='habitaciones'),
+    path('agregar/<codigo>',agregar_reserva,name='agregar'),
+    path('reservas',reserva_cliente,name='reservas'),
+    path('borrar',borrar_reserva,name='borrar'),
+    path('confirmar',confirmar_reserva,name='confirmar'),
 ]

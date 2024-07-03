@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/habitacion.css' %}">
+{% endblock estilos %}
+
+
+{% block titulo %}
+Habitaciones
+{% endblock titulo %}
+
+
+{% block contenido %}
+<main class="container-fluid">
+    <h1>Nuestras habitaciones</h1>
+    <section class="row">
+        {% for item in habitaciones %}
+        <div class="col-md-4 room-card">
+            <div class="card h-100">
+                <img src="{{item.imagen}}" class="card-img-top" width="450" alt="{{item.imagen}}" />
+                <div class="card-body">
+                    <h5 class="card-title">{{item.tipo_habitacion}}</h5>
+                    <p class="card-text">Precio: {{item.precio}} CLP por noche</p>
+                    <div class="info-reserva">
+                        <a href="{% url 'agregar' item.id_habitacion %}" id="reservar">Reservar</a>
+                        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="detalles"
+                            data-tipo="{{item.tipo_habitacion}}" data-banios="{{item.cantidad_banios}}"
+                            data-capacidad="{{item.capacidad_persona}}"
+                            data-cupos="{{item.unidades_disponibles}}"
+                            data-hotel="{{item.hotel}}">Detalles</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock contenido %}
+
+{% block scripts %}
+
+<script src="{% static 'js/habitaciones.js' %}"></script>
+{% endblock scripts %}
