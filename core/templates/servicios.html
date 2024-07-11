@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'css/servicios.css' %}">
+{% endblock estilos %}
+
+{% block titulo %}
+Services
+{% endblock %}
+
+{% block contenido %}
+<section class="services">
+    <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="service luxury-rooms">
+            <div class="service-content">
+                <h3>Habitaciones de lujo</h3>
+                <p>Nuestras habitaciones están equipadas con comodidades modernas para su confort.</p>
+            </div>
+        </div>
+        <div class="service gourmet-restaurant">
+            <div class="service-content">
+                <h3>Restaurante Gourmet</h3>
+                <p>Ofrecemos una experiencia culinaria excepcional con platos preparados por chefs de renombre.</p>
+            </div>
+        </div>
+        <div class="service spa-wellness">
+            <div class="service-content">
+                <h3>Spa y Bienestar</h3>
+                <p>Relájese y renueve su energía en nuestro spa con tratamientos rejuvenecedores.</p>
+            </div>
+        </div>
+        <div class="service pool-recreational">
+            <div class="service-content">
+                <h3>Piscina y Áreas Recreativas</h3>
+                <p>Disfrute de nuestras piscinas y áreas recreativas para momentos de diversión y relajación.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

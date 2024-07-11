@@ -51,7 +51,7 @@ def agregar_reserva(request,codigo):
     
     room.append([codigo,habitacion.tipo_habitacion,habitacion.imagen,habitacion.precio,habitacion.cantidad_banios,habitacion.capacidad_persona,habitacion.unidades_disponibles,habitacion.hotel.direccion])
     request.session["room"] = room
-    print(codigo)
+    
     
     return redirect(to='reservas')
 
@@ -66,11 +66,11 @@ def confirmar_reserva(request):
     
     reserva = Reserva()
     
-    
     for item in carrito:
         habitacion = Habitacione.objects.get(id_habitacion = int(item[0]))
+        habitacion.unidades_disponibles = habitacion.unidades_disponibles - 1
+        habitacion.save()
         reserva.id_habitacion = habitacion
-        reserva.id_hotel = habitacion.hotel
         reserva.propietario = request.user.first_name + " " + request.user.last_name
         reserva.email_propietario = request.user.email
     
@@ -80,9 +80,13 @@ def confirmar_reserva(request):
     
     reserva.save()
     
+    
     request.session["room"] = []
     
     return redirect(to='home')
+
+def services(request):
+    return render(request,'servicios.html')
     
     
 

@@ -14,4 +14,5 @@ urlpatterns = [
     path('reservas',reserva_cliente,name='reservas'),
     path('borrar',borrar_reserva,name='borrar'),
     path('confirmar',confirmar_reserva,name='confirmar'),
+    path('services',services,name='services'),
 ]

@@ -1,5 +1,6 @@
 var btnDetalles = document.querySelectorAll("#detalles");
 var modalBody = document.querySelector(".modal-body");
+var btnReservar = document.querySelectorAll("#reservar");
 
 btnDetalles.forEach(function (btn, index) {
     btn.addEventListener("click", (evento) => {
@@ -18,4 +19,17 @@ btnDetalles.forEach(function (btn, index) {
         modalBody.innerHTML = cuerpo;
     });
 });
+
+btnReservar.forEach(function(btn,index){
+    btn.addEventListener("click",(evento)=>{
+        let stock = btn.getAttribute("data-cupos");
+        stock = parseInt(stock);
+        if(stock == 0){
+            alert("No quedan habitaciones disponibles!");
+            evento.preventDefault();
+        }
+    });
+});
+
+
 

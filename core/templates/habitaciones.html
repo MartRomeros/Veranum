@@ -23,13 +23,13 @@ Habitaciones
                     <h5 class="card-title">{{item.tipo_habitacion}}</h5>
                     <p class="card-text">Precio: {{item.precio}} CLP por noche</p>
                     <div class="info-reserva">
-                        <a href="{% url 'agregar' item.id_habitacion %}" id="reservar">Reservar</a>
+                        <a href="{% url 'agregar' item.id_habitacion %}" id="reservar" data-cupos="{{item.unidades_disponibles}}">Reservar</a>
+
                         <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="detalles"
                             data-tipo="{{item.tipo_habitacion}}" data-banios="{{item.cantidad_banios}}"
                             data-capacidad="{{item.capacidad_persona}}"
                             data-cupos="{{item.unidades_disponibles}}"
                             data-hotel="{{item.hotel}}">Detalles</button>
-
                     </div>
                 </div>
             </div>
