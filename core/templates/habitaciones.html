@@ -23,12 +23,12 @@ Habitaciones
                     <h5 class="card-title">{{item.tipo_habitacion}}</h5>
                     <p class="card-text">Precio: {{item.precio}} CLP por noche</p>
                     <div class="info-reserva">
-                        <a href="{% url 'agregar' item.id_habitacion %}" id="reservar" data-cupos="{{item.unidades_disponibles}}">Reservar</a>
+                        <a href="{% url 'agregar' item.id_habitacion %}" id="reservar"
+                            data-cupos="{{item.unidades_disponibles}}">Reservar</a>
 
                         <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="detalles"
                             data-tipo="{{item.tipo_habitacion}}" data-banios="{{item.cantidad_banios}}"
-                            data-capacidad="{{item.capacidad_persona}}"
-                            data-cupos="{{item.unidades_disponibles}}"
+                            data-capacidad="{{item.capacidad_persona}}" data-cupos="{{item.unidades_disponibles}}"
                             data-hotel="{{item.hotel}}">Detalles</button>
                     </div>
                 </div>
@@ -36,27 +36,6 @@ Habitaciones
         </div>
         {% endfor %}
     </section>
-</main>
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalles</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 {% endblock contenido %}
 
 {% block scripts %}
