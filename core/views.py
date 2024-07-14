@@ -103,6 +103,13 @@ def cancelar_reservas(request,codigo):
     habitacion = Habitacione.objects.get(tipo_habitacion = reserva.id_habitacion)
     habitacion.unidades_disponibles = habitacion.unidades_disponibles + 1
     habitacion.save()
+
+    subject = 'Veranum'
+    message = f'Hola {request.user.first_name},\n\n¡Tu reserva ha sido cancelada!\nNumero de reserva: {reserva.cod_reserva}\nPorfavor informar si tuvo algun inconveniente con nuestro equipo.'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [request.user.email]            
+    send_mail(subject, message, email_from, recipient_list)
+
     return redirect(to='reservas')
         
 
