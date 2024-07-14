@@ -47,6 +47,7 @@ main>h1 {
 }
 
 .info-reserva > button{
+    padding: 1vh;
     border-radius: 2vh;
     background-color: #0c4e55;
     border: none;
@@ -54,3 +55,58 @@ main>h1 {
     color: white;
 
 }
+
+/*Modal de reserva*/
+.form-reservar{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-campo{
+    padding: 1vh;
+    border-radius: 2vh;
+    outline: none;
+    border: lightgray 1px solid;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.texto-form{
+    font-family: "Roboto", sans-serif;
+    color: black;  
+}
+
+.envio-reserva{
+    padding: 1vh;
+    border-radius: 2vh;
+    outline: none;
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+}
+
+.borrar-reserva{
+    background-color: black;
+    padding: 1vh;
+    border-radius: 2vh;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+#valor-name{
+    display: none;
+}
+
+.tiene-reservas{
+    display: none;
+}
+

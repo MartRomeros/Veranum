@@ -21,12 +21,19 @@ Habitaciones
                 <img src="{{item.imagen}}" class="card-img-top" width="450" alt="{{item.imagen}}" />
                 <div class="card-body">
                     <h5 class="card-title">{{item.tipo_habitacion}}</h5>
-                    <p class="card-text">Precio: {{item.precio}} CLP por noche</p>
+                    <p class="card-text">Precio: {{item.precio}} CLP por noche <br> Habitaciones disponibles:
+                        {{item.unidades_disponibles}}</p>
                     <div class="info-reserva">
-                        <a href="{% url 'agregar' item.id_habitacion %}" id="reservar"
-                            data-cupos="{{item.unidades_disponibles}}">Reservar</a>
+                        {% if item.unidades_disponibles == 0 %}
+                        <button id="no-cupos">Reservar</button>
+                        {% else %}
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal1" id="reservar"
+                            data-tipo="{{item.tipo_habitacion}}" data-banios="{{item.cantidad_banios}}"
+                            data-capacidad="{{item.capacidad_persona}}" data-cupos="{{item.unidades_disponibles}}"
+                            data-hotel="{{item.hotel}}" data-name="{{item.tipo_habitacion}}">Reservar</button>
+                        {% endif %}
 
-                        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="detalles"
+                        <button data-bs-toggle="modal" data-bs-target="#exampleModal" id="detalles"
                             data-tipo="{{item.tipo_habitacion}}" data-banios="{{item.cantidad_banios}}"
                             data-capacidad="{{item.capacidad_persona}}" data-cupos="{{item.unidades_disponibles}}"
                             data-hotel="{{item.hotel}}">Detalles</button>
@@ -36,6 +43,87 @@ Habitaciones
         </div>
         {% endfor %}
     </section>
+</main>
+
+
+{# modal de detalles de la habitacion #}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Detalles de la habitacion:</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{# modal de reservar habitacion: #}
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirma tu reserva!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-reserva">
+
+                <form action="{% url 'confirmar' %}" class="form-reservar" method="post">
+                    <h3 id="room-name" class="texto-form"></h3>
+                    {% csrf_token %}
+                    <input type="text" id="valor-name" name="valor-name"class="form-campo">
+                    <fieldset class="campo">
+                        <h5 class="texto-form">Nombre:</h5>
+                        <h6 class="texto-form">{{user.first_name}} {{user.last_name}}</h6>
+                    </fieldset>
+                    <fieldset class="campo">
+                        <h5 class="texto-form">Correo electronico</h5>
+                        <h6 class="texto-form">{{user.email}}</h6>
+                    </fieldset>
+                    <fieldset class="campo">
+                        <label for="fono" class="texto-form">
+                            <h5 class="texto-form">Telefono</h5>
+                        </label>
+                        <input type="number" id="fono" name="fono" class="form-campo">
+                    </fieldset>
+                    <fieldset class="campo">
+                        <label for="fec-ini">
+                            <h5 class="texto-form">Fecha De Inicio de la reserva</h5>
+                        </label>
+                        <input type="date" id="fec-ini" name="fec-ini" class="form-campo">
+                    </fieldset>
+                    <fieldset class="campo">
+                        <label for="fec-ter">
+                            <h5 class="texto-form">Fecha De Termino de la reserva</h5>
+                        </label>
+                        <input type="date" id="fec-ter" name="fec-ter" class="form-campo">
+                    </fieldset>
+                    <button type="submit" class="btn btn-secondary envio-reserva">Confirmar Reserva</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary envio-reserva" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for reserva in reservas %}
+{% if reserva.estado == "vigente" %}
+<h1 class="tiene-reservas">{{reserva.estado}}</h1>
+{% endif %}
+{% endfor %}
+
+
 {% endblock contenido %}
 
 {% block scripts %}
