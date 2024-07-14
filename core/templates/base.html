@@ -43,17 +43,19 @@
                             <a class="nav-link active" href="{% url 'habitaciones' %}">Habitaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Servicios</a>
+                            <a class="nav-link active" href="{% url 'services' %}">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Ubicación</a>
+                            <a class="nav-link active" href="{% url 'ubicacion' %}">Ubicación</a>
                         </li>
+                        {% if user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/admin/">administración</a>
+                        </li>
+                        {% endif %}
                         {% if user.is_authenticated%}
                         <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'reservas' %}">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">{{user.username}}</a>
+                            <a class="nav-link active mis-reservas" href="{% url 'reservas' %}">Mis Reservas <i class="bi bi-journal-x"></i></a>
                         </li>
                         <form class="nav-item" action="{% url 'logout' %}" method="post" >
                             {% csrf_token %}
@@ -62,11 +64,6 @@
                         {% else %}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Inicio de Sesión</a>
-                        </li>
-                        {% endif %}
-                        {% if user.is_staff %}
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/admin/">administración</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -92,7 +89,7 @@
                 <h6><a aria-current="page" href="{% url 'privacidad' %}">Politica de privacidad</a></h6>
             </div>
             <div class="col">
-                <h6><a href="">Contáctanos</a></h6>
+                <h6><a href="http://127.0.0.1:8000/#contact">Contáctanos</a></h6>
             </div>
         </section>
     </footer>
